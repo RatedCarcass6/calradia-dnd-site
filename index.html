@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calradia D&D Map</title>
+
+  <!-- Leaflet and custom styles -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+<body>
+
+      <!-- Side Navigation -->
+  <nav>
+    <h2>Calradia</h2>
+    <ul>
+      <li><a href="parties.html">Parties</a></li>
+      <li><a href="lore.html">Lore</a></li>
+      <li><a href="characters.html">Characters</a></li>
+    </ul>
+  </nav>
+
+  <!-- Fantasy Header -->
+  <header>
+    <h1>Calradia</h1>
+  </header>
+
+  <!-- Map Container -->
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const imageBounds = [[0, 0], [1000, 1000]];
+
+    const map = L.map('map', {
+      crs: L.CRS.Simple,
+      minZoom: -2
+    });
+
+    const image = L.imageOverlay('Images/New Calradia.jpg', imageBounds).addTo(map);
+    map.fitBounds(imageBounds);
+  </script>
+</body>
+</html>
+
